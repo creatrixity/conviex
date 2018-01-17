@@ -9,6 +9,6 @@ class ServiceProvider extends BaseServiceProvider
     public function register()
     {
         // Register the service providers of your Services here.
-        // $this->app->register('full namespace here')
+        $this->app->register('App\Services\Web\Providers\WebServiceProvider');
     }
 }

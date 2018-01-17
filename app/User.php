@@ -26,4 +26,25 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /*
+     * Every user has multiple converser instances.
+     *
+     * @return Eloquent Object
+     */
+    public function conversers()
+    {
+        return $this->hasMany('Framework\Converser');
+    }
+
+    /*
+     * Every user has many messages.
+     *
+     * @return Eloquent Object
+     */
+     public function messages()
+     {
+         return $this->hasMany('Framework\Converser');
+     }
+
 }
