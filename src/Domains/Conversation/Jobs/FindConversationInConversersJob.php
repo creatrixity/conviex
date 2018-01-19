@@ -26,7 +26,7 @@ class FindConversationInConversersJob extends Job
      */
     public function handle()
     {
-        $conversation = null;
+        $hasConversation = false;
 
         $conversers = $this->conversers;
 
@@ -34,7 +34,7 @@ class FindConversationInConversersJob extends Job
 
             if ($converser->user_id == $this->converserID)
             {
-                $conversation = true;
+                $hasConversation = true;
 
                 break;
             }
@@ -42,7 +42,7 @@ class FindConversationInConversersJob extends Job
             break;
         }
 
-        return $conversation;
+        return $hasConversation;
 
     }
 
