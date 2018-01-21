@@ -6,9 +6,11 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 use App\Data\Contracts\ConversationRepositoryInterface;
 use App\Data\Contracts\ConverserRepositoryInterface;
+use App\Data\Contracts\MessageRepositoryInterface;
 
 use App\Data\Repositories\EloquentConversationRepository;
 use App\Data\Repositories\EloquentConverserRepository;
+use App\Data\Repositories\EloquentMessageRepository;
 
 
 class ServiceProvider extends BaseServiceProvider
@@ -25,6 +27,10 @@ class ServiceProvider extends BaseServiceProvider
 
         $this->app->bind(ConverserRepositoryInterface::class, function () {
             return new EloquentConverserRepository();
+        });
+
+        $this->app->bind(MessageRepositoryInterface::class, function () {
+            return new EloquentMessageRepository();
         });
 
     }
