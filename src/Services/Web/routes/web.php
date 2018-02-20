@@ -24,6 +24,10 @@ Route::group(['prefix' => 'web'], function() {
 
 Route::group(['middleware' => ['web']], function () {
 
+    Route::get('/users', 'UserController@index')
+        ->name('users')
+        ->middleware('auth');
+
     Route::get('/conversations', 'ConversationController@index')
           ->name('conversations')
           ->middleware('auth');

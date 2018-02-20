@@ -4,10 +4,9 @@ namespace App\Services\Web\Http\Controllers;
 use Illuminate\Http\Request;
 use Lucid\Foundation\Http\Controller;
 
-use App\Services\Web\Features\ListConversationsFeature;
-use App\Services\Web\Features\ConversationsFeature;
+use App\Services\Web\Features\ListUsersFeature;
 
-class ConversationController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class ConversationController extends Controller
      */
     public function index()
     {
-        return $this->serve(ListConversationsFeature::class);
+        return $this->serve(ListUsersFeature::class);
     }
 
     /**
@@ -48,9 +47,7 @@ class ConversationController extends Controller
      */
     public function show($id)
     {
-        return $this->serve(ConversationsFeature::class, [
-            'id' => $id
-        ]);
+        //
     }
 
     /**

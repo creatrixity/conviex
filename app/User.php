@@ -5,6 +5,8 @@ namespace Framework;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use \Avatar;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -15,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'username', 'email', 'password',
     ];
 
     /**
@@ -45,6 +47,36 @@ class User extends Authenticatable
      public function messages()
      {
          return $this->hasMany('Framework\Converser');
+     }
+
+     /*
+      * Returns a user's first name.
+      *
+      * @return { String }
+      */
+
+     public function getFirstName()
+     {
+         $str = explode('.', trim($this->name));
+
+         $name = count($str) > 1 ? $str[1] : $str[0];
+
+         $name = explode(' ', trim($name))[0];
+
+         return $name;
+     }
+
+     /*
+      * Returns an avatar image based on a users name.
+      *
+      * @return { String }
+      */
+
+     public function getUserAvatar($size = 128)
+     {
+         $avatar = Avatar::create($this->name)->setDimension($size)->setFontSize(10)->setShape('square')->toBase64();
+
+         return $avatar;
      }
 
 }

@@ -20,6 +20,31 @@ class Repository
     }
 
     /**
+     * Creates a new instance of the model.
+     * Kinda like our fillAndSave method but we get timestamp updates as perks.
+     *
+     * @param array $attributes
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function create($attributes = null)
+    {
+        return $this->model->create($attributes);
+    }
+
+    /**
+     * Creates a new instance of the model if it does not exist.
+     *
+     * @param array $attributes
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function createIfNotExists($attributes = null)
+    {
+        return $this->model->firstOrCreate($attributes);
+    }
+
+    /**
      * Returns the first record in the database.
      *
      * @return \Illuminate\Database\Eloquent\Model

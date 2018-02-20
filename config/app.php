@@ -167,7 +167,7 @@ return [
          * Package Service Providers...
          */
 
-        //
+         Laravolt\Avatar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -198,6 +198,7 @@ return [
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
+        'Avatar' => Laravolt\Avatar\Facade::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
         'Config' => Illuminate\Support\Facades\Config::class,

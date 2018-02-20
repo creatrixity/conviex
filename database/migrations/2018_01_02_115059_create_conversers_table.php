@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Carbon\Carbon;
 
 class CreateConversersTable extends Migration
 {
@@ -17,7 +18,7 @@ class CreateConversersTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('conversation_id');
-            $table->datetime('last_read_at');
+            $table->datetime('last_read_at')->default(Carbon::now());
             $table->timestamps();
             $table->softDeletes();
         });
