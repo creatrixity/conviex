@@ -1,0 +1,12 @@
+.card
+{
+    padding: 10px;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.card--default
+{
+    background: white;
+    box-shadow: 1px 1.732px 20px 0px #efefef;
+}

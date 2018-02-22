@@ -175,6 +175,8 @@ class Conversation extends Model
 
         if ($createdAt->diffInHours() < 24) return $createdAt->diffInHours(). 'h';
 
+        if ($createdAt->diffInYears() < 1) return $createdAt->format('jS M');
+
         return $createdAt->format('jS M Y');
 
     }

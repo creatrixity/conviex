@@ -32,14 +32,10 @@ class FindConversationInConversersJob extends Job
 
         foreach ($this->conversers as $converser) {
 
-            if ($converser->user_id == $this->converserID)
-            {
-                $hasConversation = true;
+                $hasConversation = $converser->user_id == $this->converserID;
 
-                break;
-            }
+                if ($hasConversation) break;
 
-            break;
         }
 
         return $hasConversation;

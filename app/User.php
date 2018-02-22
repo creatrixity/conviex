@@ -5,7 +5,7 @@ namespace Framework;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-use \Avatar;
+use Avatar;
 
 class User extends Authenticatable
 {

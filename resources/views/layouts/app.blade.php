@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -19,6 +20,7 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+
 </head>
 <body>
     <div id="app">
@@ -55,6 +57,7 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <img src="{{ Auth::user()->getUserAvatar(30) }}" class="img img-circle" alt="">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
