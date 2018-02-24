@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+He
             <section class="app-content u-mb-md" style="margin-top: 60px;">
                 <div class="">
                     <section class="col-md-8 col-md-offset-2 col-xs-12 u-mb-md">

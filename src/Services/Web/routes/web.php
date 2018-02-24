@@ -28,6 +28,10 @@ Route::group(['middleware' => ['web']], function () {
         ->name('users')
         ->middleware('auth');
 
+    Route::get('/{username}', 'UserController@show')
+        ->name('profile')
+        ->middleware('auth');
+
     Route::get('/conversations', 'ConversationController@index')
           ->name('conversations')
           ->middleware('auth');

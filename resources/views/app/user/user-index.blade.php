@@ -21,6 +21,7 @@
                                     <td><span class="sr-only">Avatar</span></td>
                                     <td><b>Name</b></td>
                                     <td><b>Username</b></td>
+                                    <td><b>Email</b></td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -30,6 +31,7 @@
                                     <td> <img class="img img-responsive img-circle" src="{{ $user->getUserAvatar(30) }}" alt="{{ $user->getFirstName() }} avatar"> </td>
                                     <td>{{ $user->getFirstName() }}</td>
                                     <td>{{ $user->username }}</td>
+                                    <td>{{ $user->email }}</td>
                                     <td>
                                         <a href="{{ url(route('message', $user->id)) }}" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="top" title="Start a conversation with {{ $user->name }}">
                                             <i class="glyphicon glyphicon-envelope" style="font-size: 18px;"></i>

@@ -51,4 +51,20 @@ class Message extends Model
         return $this->belongsTo('Framework\User');
     }
 
+    public function getTimeDiff()
+    {
+        $createdAt = $this->created_at;
+
+        if ($createdAt->diffInSeconds() < 60) return $createdAt->diffInSeconds(). 's';
+
+        if ($createdAt->diffInMinutes() < 60) return $createdAt->diffInMinutes(). 'm';
+
+        if ($createdAt->diffInHours() < 24) return $createdAt->diffInHours(). 'h';
+
+        if ($createdAt->diffInYears() < 1) return $createdAt->format('jS M');
+
+        return $createdAt->format('jS M Y');
+
+    }
+
 }

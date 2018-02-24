@@ -10,3 +10,104 @@
     background: white;
     box-shadow: 1px 1.732px 20px 0px #efefef;
 }
+
+.fcds-convo
+{
+    padding: 0
+}
+
+.fcds-convo__header
+{
+    border-bottom: 1px solid #f7f7f7;
+    padding: 31.2px;
+    position: relative
+}
+
+.fcds-convo__header .fcds-convo__link
+{
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+@media (max-width: 767px)
+{
+    .fcds-convo__header .fcds-convo__link
+    {
+        position: relative;
+        display: block;
+        text-align: center
+    }
+}
+
+.fcds-convo__main
+{
+    overflow-y: scroll;
+    max-height: 300px;
+    min-height: 300px;
+    padding-top: 31.2px
+}
+
+.fcds-convo__title
+{
+    display: inline-block
+}
+
+.fcds-convo__item--user .fcds-convo__message
+{
+    background: #5bc0de;
+    color: white
+}
+
+.fcds-convo__item--user .fcds-convo__avatar
+{
+    margin-left: 10px
+}
+
+.fcds-convo__avatar
+{
+    margin-right: 10px
+}
+
+.fcds-convo__message
+{
+    background: #f7f7f7;
+    display: inline-block;
+    word-wrap: auto;
+    max-width: 440px;
+    padding: 7.5px 13.33px;
+    border-radius: 15px
+}
+
+.fcds-convo__date
+{
+    display: block;
+    width: 100%
+}
+
+.fcds-convo__listing
+{
+    padding-top: 13.33px;
+    color: #555;
+    border-radius: 4px
+}
+
+.fcds-convo__listing:hover,
+.fcds-convo__listing:focus
+{
+    background: #f7f7f7;
+    color: #555
+}
+
+.fcds-convo__input
+{
+    height: 40px !important;
+    resize: none
+}
+
+.fcds-convo__footer
+{
+    border-top: 1px solid #f7f7f7;
+    padding: 13.33px 0
+}
